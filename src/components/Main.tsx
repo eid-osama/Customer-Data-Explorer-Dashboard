@@ -1,5 +1,5 @@
-import StatsCard from "./StatsCards";
-import TableComponent from "./TableComponent";
+import StatsCard from "../features/dashboard/StatsCards";
+import TableComponent from "../features/dashboard/TableComponent";
 
 function Main() {
   return (

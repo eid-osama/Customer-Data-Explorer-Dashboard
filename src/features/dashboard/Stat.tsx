@@ -1,4 +1,4 @@
-import type { stat } from "../types";
+import type { stat } from "../../types";
 
 function Stat({ image, field, count }: stat) {
   return (

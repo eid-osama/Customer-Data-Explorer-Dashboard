@@ -1,6 +1,6 @@
-import totalCustomers from "../assets/total-customers.png";
-import countries from "../assets/countries.png";
-import active from "../assets/active.png";
+import totalCustomers from "@/assets/total-customers.png";
+import countries from "@/assets/countries.png";
+import active from "@/assets/active.png";
 import Stat from "./Stat";
 
 function StatsCard() {
