@@ -30,7 +30,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden flex-1">
       <Table className="flex-1">
         <TableHeader className="*:text-[#B5B7C0]">
           {table.getHeaderGroups().map((headerGroup) => (

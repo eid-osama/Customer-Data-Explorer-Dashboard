@@ -2,6 +2,7 @@ export type stat = {
   image: string;
   field: string;
   count: number | string;
+  isPending: boolean;
 };
 export type User = {
   firstName: string;
@@ -16,4 +17,5 @@ export type User = {
     country: string;
   };
   age: number;
+  // status: "active" | "inactive";
 };

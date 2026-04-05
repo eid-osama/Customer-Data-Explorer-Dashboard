@@ -1,17 +1,24 @@
 import getUsers from "@/services/apiUsers";
 import type { User } from "@/types";
-import { useQuery } from "@tanstack/react-query";
+import {
+  useQuery,
+  type QueryObserverResult,
+  type RefetchOptions,
+} from "@tanstack/react-query";
 
 function useUsers(): {
-  data: User[];
+  data: User[] | undefined;
   isPending: boolean;
   error: Error | null;
+  refetch: (
+    options?: RefetchOptions,
+  ) => Promise<QueryObserverResult<User[] | undefined, Error>>;
 } {
-  const { error, data, isPending } = useQuery({
+  const { error, data, isPending, refetch } = useQuery<User[], Error>({
     queryKey: ["users"],
     queryFn: getUsers,
   });
-  return { error, data, isPending };
+  return { error, data, isPending, refetch };
 }
 
 export default useUsers;

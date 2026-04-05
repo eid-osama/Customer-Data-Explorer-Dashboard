@@ -15,33 +15,6 @@ function useDebounce(value: string, delay = 280) {
   }, [value, delay]);
   return debounced;
 }
-// function Highlight({ text, query }) {
-//   if (!query) return <>{text}</>;
-//   const parts = text.split(
-//     new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"),
-//   );
-//   return (
-//     <>
-//       {parts.map((part, i) =>
-//         part.toLowerCase() === query.toLowerCase() ? (
-//           <mark
-//             key={i}
-//             style={{
-//               background: "var(--accent)",
-//               color: "var(--bg)",
-//               borderRadius: 3,
-//               padding: "0 2px",
-//             }}
-//           >
-//             {part}
-//           </mark>
-//         ) : (
-//           part
-//         ),
-//       )}
-//     </>
-//   );
-// }
 
 function SearchComponent() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -63,7 +36,7 @@ function SearchComponent() {
     setSearchParams(params);
   }, [debouncedSearch]);
   return (
-    <InputGroup>
+    <InputGroup className="bg-[#F9FBFF]  ">
       <InputGroupInput
         placeholder="Search..."
         value={input}
