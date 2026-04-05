@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router";
 import {
   Pagination,
   PaginationContent,
@@ -8,17 +9,16 @@ import {
 } from "../../components/ui/pagination";
 
 function PaginationComponent({
-  currentPage,
   totalPages,
-  onPageChange,
   entries,
 }: {
-  currentPage: number;
   totalPages: number;
-  onPageChange: (page: number) => void;
   entries: number;
-  pageSize?: number;
 }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const currentPage = Number(searchParams.get("page")) || 1;
+
   const pages = [];
 
   // Previous page
@@ -34,6 +34,13 @@ function PaginationComponent({
     pages.push(currentPage + 1);
   }
 
+  // 🔥 helper to update page without losing other params
+  const setPage = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", page.toString());
+    setSearchParams(params);
+  };
+
   return (
     <Pagination className="justify-between">
       <p className="text-[#B5B7C0] text-[14px]">
@@ -44,7 +51,7 @@ function PaginationComponent({
         {/* Prev Button */}
         <PaginationItem>
           <PaginationPrevious
-            onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+            onClick={() => setPage(Math.max(currentPage - 1, 1))}
             className={
               currentPage === 1 ? "pointer-events-none opacity-50" : ""
             }
@@ -56,7 +63,7 @@ function PaginationComponent({
           <PaginationItem key={page}>
             <PaginationLink
               isActive={currentPage === page}
-              onClick={() => onPageChange(page)}
+              onClick={() => setPage(page)}
             >
               {page}
             </PaginationLink>
@@ -66,7 +73,7 @@ function PaginationComponent({
         {/* Next Button */}
         <PaginationItem>
           <PaginationNext
-            onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
+            onClick={() => setPage(Math.min(currentPage + 1, totalPages))}
             className={
               currentPage === totalPages ? "pointer-events-none opacity-50" : ""
             }

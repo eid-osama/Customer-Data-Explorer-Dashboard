@@ -17,6 +17,15 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "company.name",
     header: "Company",
+    cell: ({ getValue }) => {
+      const value = getValue<string>();
+
+      return (
+        <div className="max-w-[120px] truncate" title={value}>
+          {value}
+        </div>
+      );
+    },
   },
   {
     accessorKey: "address.country",
@@ -25,7 +34,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorFn: (row) => {
       if (row.age < 35) return "Active";
-      if (row.age > 35) return "Inactive";
+      if (row.age >= 35) return "Inactive";
     },
     header: "Status",
     cell: ({ getValue }) => {

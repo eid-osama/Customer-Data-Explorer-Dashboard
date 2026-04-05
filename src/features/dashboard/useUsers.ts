@@ -1,7 +1,12 @@
 import getUsers from "@/services/apiUsers";
+import type { User } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 
-function useUsers() {
+function useUsers(): {
+  data: User[];
+  isPending: boolean;
+  error: Error | null;
+} {
   const { error, data, isPending } = useQuery({
     queryKey: ["users"],
     queryFn: getUsers,
