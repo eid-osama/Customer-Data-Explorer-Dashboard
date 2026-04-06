@@ -7,7 +7,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="w-[1100px] mx-auto">
+        <div className="max-w-7xl px-4 md:px-6 lg:px-8 lg:mx-auto h-screen">
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />

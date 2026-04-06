@@ -7,7 +7,7 @@ import { SearchIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
-function useDebounce(value: string, delay = 280) {
+function useDebounce(value: string, delay = 300) {
   const [debounced, setDebounced] = useState(value);
   useEffect(() => {
     const id = setTimeout(() => setDebounced(value), delay);

@@ -27,7 +27,7 @@ function StatsCard() {
   }, [data]);
 
   return (
-    <div className="flex w-full h-[151px] justify-between">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full  ">
       <Stat
         image={totalCustomers}
         field="Total Customers"

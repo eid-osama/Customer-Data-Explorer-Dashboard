@@ -1,9 +1,9 @@
-import FilterComponent from "./Filtercomponent";
+import FilterComponent from "./FilterComponent";
 import SearchComponent from "./SearchComponent";
 
 function TableOperations() {
   return (
-    <div className="flex justify-between gap-4 max-h-[120px] ">
+    <div className="flex flex-col md:flex-row md:gap-4 gap-4 max-h-[120px] ">
       <SearchComponent />
       <FilterComponent />
     </div>
