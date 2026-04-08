@@ -7,7 +7,7 @@ Built with Vite for high performance and a smooth developer experience.
 
 ## 🚀 Preview
 
-![Dashboard Screenshot](./src/assets//preview.png)
+![Dashboard Screenshot](./src/assets/preview.png)
 
 > Add your own screenshot inside a `screenshots/` folder
 
