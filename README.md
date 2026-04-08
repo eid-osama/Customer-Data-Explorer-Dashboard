@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# Customer Data Explorer Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fast, minimal **React + TypeScript dashboard** for exploring, managing, and operating on customer data.  
+Built with Vite for high performance and a smooth developer experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Preview
 
-## React Compiler
+![Dashboard Screenshot](./src/assets//preview.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Add your own screenshot inside a `screenshots/` folder
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🌐 Live Demo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+👉 https://customer-data-explorer.netlify.app/
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎯 Purpose
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Provide a lightweight UI for inspecting customer datasets
+- Enable fast search, filtering, and data exploration
+- Serve as a foundation for internal tools and admin dashboards
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✨ Features
+
+- 🔍 Real-time search and filtering (client-side + API)
+- 📊 Data insights with stats cards
+- 🧾 Interactive table with sorting & pagination
+- ✅ Row selection and bulk actions
+- ✏️ Table operations (edit, delete)
+- 🧩 Modular feature-based architecture
+- ⚡ Fast performance with Vite
+
+---
+
+## 🛠️ Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- ShadCN UI
+
+---
+
+## ⚙️ Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm
+
+---
+
+### Installation
+
+```bash
+git clone <repo-url>
+cd Customer-Data-Explorer-Dashboard
+npm install
 ```
